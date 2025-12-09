@@ -57,13 +57,17 @@ Aqui estão alguns projetos que liderei ou que tenho orgulho do resultado:
 
 Aqui estão algumas estatísticas e um gráfico da minha atividade nos últimos meses.
 
-<p align="center">
-  <img height="150" src="https://github-readme-stats.vercel.app/api?username=PabloTzeliks&show_icons=true&theme=tokyonight&count_private=true&show_rank=true" alt="Estatísticas do Pablo no GitHub" />
-  <img height="150" src="https://github-readme-stats.vercel.app/api/top-langs/?username=PabloTzeliks&layout=compact&theme=tokyonight" alt="Linguagens Mais Usadas" />
-</p>
-<p align="center">
+<div align="center">
+  <a href="https://github.com/PabloTzeliks">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=PabloTzeliks&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=PabloTzeliks&layout=compact&langs_count=7&theme=tokyonight"/>
+  </a>
+</div>
+
+<div align="center">
+  <br>
   <img src="https://streak-stats.demolab.com/?user=PabloTzeliks&theme=tokyonight" alt="GitHub Streak" />
-</p>
+</div>
 
 ---
 
