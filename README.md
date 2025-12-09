@@ -74,7 +74,7 @@ Aqui estão algumas estatísticas e um gráfico da minha atividade nos últimos 
 ### 🌐 Conecte-se Comigo
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/pablo-ruan-tzeliks-3b3304224/" target="_blank">
+  <a href="https://www.linkedin.com/in/pablo-ruan-tzeliks" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
   </a>
   <a href="mailto:arq.pabloo@gmail.com" target="_blank">
