@@ -17,21 +17,21 @@ Minhas ferramentas principais são focadas no ecossistema Java, mas tenho uma ba
 **Foco Principal (Back-End):**
 <p align="left">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=java,spring,postgres,mysql,git" alt="Java, Spring, PostgreSQL, MySQL, Git"/>
+    <img src="https://skillicons.dev/icons?i=java,spring,postgres,mysql,git,docker" alt="Java, Spring, PostgreSQL, MySQL, Git, Docker"/>
   </a>
 </p>
 
 **Conhecimentos (Full Stack & Data):**
 <p align="left">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=html,css,js,python,docker" alt="HTML, CSS, JavaScript, Python, Docker"/>
+    <img src="https://skillicons.dev/icons?i=html,css,js,typescript,nodejs,python" alt="HTML, CSS, JavaScript, NodeJS, Python"/>
   </a>
 </p>
 
 **Ferramentas, Design e Plataformas:**
 <p align="left">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=tailwind,docker,github,figma,linux,maven,nodejs,obsidian,vercel,md&perline=5" alt="tailwind, docker, github, figma, linux, maven, nodejs, obsidian, vercel, markdown"/>
+    <img src="https://skillicons.dev/icons?i=tailwind,github,figma,linux,maven,obsidian,vercel,md,postman,idea&perline=5" alt="tailwind, github, figma, linux, maven, obsidian, vercel, markdown, postman, intellij"/>
   </a>
 </p>
 
