@@ -4,8 +4,8 @@
 
 Sou **Aprendiz na WEG**, onde também participo do curso de Desenvolvimento de Sistemas do CentroWEG. Meu foco principal é o desenvolvimento **Back-end Java**, com um interesse especial em arquitetura de sistemas e na construção de APIs robustas.
 
-* 🌱 Atualmente, estou focado em: **Estruturas de Dados & Algoritmos**, design de **Bancos de Dados Relacionais** e **Arquitetura de Software**.
-* 🎯 Meu próximo objetivo é aprofundar meus conhecimentos no ecossistema **Spring**, especialmente **Spring Boot**, para criar APIs REST/RESTful eficientes.
+* 🌱 Atualmente, estou focado em aprofundar meus conhecimentos no ecossistema **Spring**, especialmente **Spring Boot**, aprendendo sobre **Testes Automatizados**, **Persistência JPA/Hibernate**, **Modularização e Clean Code** para criar APIs REST/RESTful eficientes.
+* 🎯 Meu próximo objetivo é aprofundar meus conhecimentos em **DDD**, **Spring Security** e em unir Back-End com Front-End.
 * 💡 Estou sempre aberto a colaborar em projetos e aprender com a comunidade.
 
 ---
@@ -45,6 +45,11 @@ Aqui estão alguns projetos que liderei ou que tenho orgulho do resultado:
     * **O que é:** Sistema de recrutamento (MVP) onde atuei como **Tech Lead** e desenvolvedor principal.
     * **Destaques:** O projeto utiliza uma arquitetura robusta (+140 classes) com padrão de projeto Strategy, injeção de dependências (DTOs, Services, Repositories) e autenticação via token smples, utilizando o Driver JDBC para queries junto ao PostgreSQL.
     * *Tecnologias: Java, PostgreSQL (JDBC), Maven, JDBC, Strategy Pattern, Clean Architecture*
+
+ * **[todolist](https://github.com/PabloTzeliks/todolist)**
+    * **O que é:** API RESTful desenvolvida com foco em Arquitetura Corporativa e boas práticas de Engenharia de Software, simulando um ambiente real de produção.
+    * **Destaques:** Refatoração completa (v2.0) implementando Design Patterns (DTO, Mapper) para desacoplamento de camadas e tratamento de erros padronizado (RFC 7807). O projeto conta com orquestração de ambientes via Docker, alternando entre H2 (Dev) e PostgreSQL (Prod) e Testes Automatizados.
+    * *Tecnologias: Java 17, Spring Boot 3, Spring JPA, PostgreSQL, H2Database, Docker, SpringDoc (Swagger), Bean Validation, JUnit 5, Clean Architecture*
 
 * **[coca-design-to-code](https://github.com/PabloTzeliks/coca-design-to-code)**
     * **O que é:** Desafio de front-end para replicar um design estático feito via Figma.
