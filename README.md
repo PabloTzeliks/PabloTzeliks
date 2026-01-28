@@ -70,7 +70,7 @@ Aqui estão alguns projetos que liderei ou que tenho orgulho do resultado:
 Aqui estão algumas estatísticas e um gráfico da minha atividade nos últimos meses.
 
 <div align="center">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=PabloTzeliks&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=PabloTzeliks&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide=commits"/>
   
   <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=PabloTzeliks&layout=compact&theme=tokyonight"/>
 </div>
