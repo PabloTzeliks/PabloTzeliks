@@ -14,24 +14,31 @@ Sou **Aprendiz na WEG**, onde também participo do curso de Desenvolvimento de S
 
 Minhas ferramentas principais são focadas no ecossistema Java, mas tenho uma base Full Stack sólida.
 
-**Foco Principal (Back-End):**
+**Back-End & Banco de Dados:**
 <p align="left">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=java,spring,postgres,mysql,git,docker" alt="Java, Spring, PostgreSQL, MySQL, Git, Docker"/>
+    <img src="https://skillicons.dev/icons?i=java,spring,postgres,mysql,hibernate" alt="Java, Spring, Postgres, MySQL, Hibernate"/>
   </a>
 </p>
 
-**Conhecimentos (Full Stack & Data):**
+**Cloud & DevOps:**
 <p align="left">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=html,css,js,typescript,nodejs,python" alt="HTML, CSS, JavaScript, NodeJS, Python"/>
+    <img src="https://skillicons.dev/icons?i=aws,docker,githubactions,git,linux,maven" alt="AWS, Docker, Actions, Git, Linux, Maven"/>
   </a>
 </p>
 
-**Ferramentas, Design e Plataformas:**
+**Front-End & Web:**
 <p align="left">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=tailwind,github,figma,linux,maven,obsidian,vercel,md,postman,idea&perline=5" alt="tailwind, github, figma, linux, maven, obsidian, vercel, markdown, postman, intellij"/>
+    <img src="https://skillicons.dev/icons?i=html,css,js,typescript,nodejs,python" alt="Web Stack"/>
+  </a>
+</p>
+
+**Ferramentas, Design & Qualidade:**
+<p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=idea,postman,figma,obsidian,md,vercel" alt="IntelliJ, Postman, Figma, Obsidian, Markdown, Vercel"/>
   </a>
 </p>
 
@@ -40,6 +47,11 @@ Minhas ferramentas principais são focadas no ecossistema Java, mas tenho uma ba
 ### 🚀 Meus Projetos Principais
 
 Aqui estão alguns projetos que liderei ou que tenho orgulho do resultado:
+
+* **[blink-link (URL Shortener v2.0)](https://github.com/PabloTzeliks/blink-link)**
+    * **O que é:** Encurtador de URLs Enterprise-Ready desenvolvido com foco em alta performance e escalabilidade.
+    * **Destaques:** Arquitetura limpa (**Clean Architecture**), persistência otimizada com **PostgreSQL**, algoritmo Base62 customizado e ambiente 100% containerizado com **Docker**, tratamento de erros padronizado (RFC 7807). Possui pipeline de **CI/CD** no GitHub Actions rodando testes automatizados (**Unitários, Integração e E2E**) antes de gerar a imagem Docker.
+    * *Stack: Java 21, Spring Boot 3, PostgreSQL, Docker, Testcontainers, GitHub Actions, JUnit 5.*
 
 * **[mvp-recruitment-system](https://github.com/equipe-javagle/mvp-recruitment-system)**
     * **O que é:** Sistema de recrutamento (MVP) onde atuei como **Tech Lead** e desenvolvedor principal.
@@ -51,11 +63,6 @@ Aqui estão alguns projetos que liderei ou que tenho orgulho do resultado:
     * **Destaques:** Refatoração completa (v2.0) implementando Design Patterns (DTO, Mapper) para desacoplamento de camadas e tratamento de erros padronizado (RFC 7807). O projeto conta com orquestração de ambientes via Docker, alternando entre H2 (Dev) e PostgreSQL (Prod) e Testes Automatizados.
     * *Tecnologias: Java 17, Spring Boot 3, Spring JPA, PostgreSQL, H2Database, Docker, SpringDoc (Swagger), Bean Validation, JUnit 5, Clean Architecture*
 
-* **[coca-design-to-code](https://github.com/PabloTzeliks/coca-design-to-code)**
-    * **O que é:** Desafio de front-end para replicar um design estático feito via Figma.
-    * **Destaques:** Focado em responsividade total com HTML e CSS puros. (Este projeto recebeu nota máxima na avaliação do curso).
-    * *Tecnologias: HTML5, CSS3*
-
 ---
 
 ### 📊 Minha Atividade no GitHub
@@ -63,15 +70,18 @@ Aqui estão alguns projetos que liderei ou que tenho orgulho do resultado:
 Aqui estão algumas estatísticas e um gráfico da minha atividade nos últimos meses.
 
 <div align="center">
-  <img src="https://metrics.lecoq.io/PabloTzeliks?template=classic&base.header=0&base.activity=1&base.community=1&base.repositories=1&base.metadata=0&isocalendar=1&languages=1&languages.limit=7&config.timezone=America%2FSao_Paulo" alt="Metrics do Pablo">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=PabloTzeliks&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true"/>
+  
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=PabloTzeliks&layout=compact&theme=tokyonight"/>
 </div>
+
 <div align="center">
-  <img src="https://streak-stats.demolab.com/?user=PabloTzeliks&theme=tokyonight" alt="GitHub Streak" />
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=PabloTzeliks&theme=tokyonight" alt="GitHub Streak" />
 </div>
 
 ---
 
-### 🌐 Conecte-se Comigo
+<h2 align="center">🌐 Conecte-se Comigo</h2>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/pablo-ruan-tzeliks" target="_blank">
@@ -80,8 +90,9 @@ Aqui estão algumas estatísticas e um gráfico da minha atividade nos últimos 
   <a href="mailto:arq.pabloo@gmail.com" target="_blank">
     <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
   </a>
+</p>
 
-  <h4 align="center">Sinta se a vontade a ver meus repositórios e projetos!</h4>
+  <h4 align="center">Sinta se a vontade a ver meus repositórios e projetos! Caso goste de algum, considere favorita-lo!</h4>
 </p>
 
 ---
