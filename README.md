@@ -76,7 +76,7 @@ Aqui estão algumas estatísticas e um gráfico da minha atividade nos últimos 
 </div>
 
 <div align="center">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=PabloTzeliks&theme=tokyonight" alt="GitHub Streak" />
+  <img src="https://streak-stats.demolab.com/?user=PabloTzeliks&theme=tokyonight" alt="GitHub Streak" />
 </div>
 
 ---
