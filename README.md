@@ -4,8 +4,8 @@
 
 Sou **Aprendiz na WEG**, onde também participo do curso de Desenvolvimento de Sistemas do CentroWEG. Meu foco principal é o desenvolvimento **Back-end Java**, com um interesse especial em arquitetura de sistemas e na construção de APIs robustas.
 
-* 🌱 Atualmente, estou focado em aprofundar meus conhecimentos no ecossistema **Spring**, especialmente **Spring Boot**, aprendendo sobre **Testes Automatizados**, **Persistência JPA/Hibernate**, **Modularização e Clean Code** para criar APIs REST/RESTful eficientes.
-* 🎯 Meu próximo objetivo é aprofundar meus conhecimentos em **DDD**, **Spring Security** e em unir Back-End com Front-End.
+* 🔭 **Atualmente:** Estou aprofundando meus conhecimentos em **Spring Security (OAuth2/JWT)**, **Arquitetura Hexagonal**, bancos **NoSQL** (MongoDB, Neo4j, Cassandra) e Infraestrutura em Nuvem com **AWS**.
+* 🎯 **Próximos Passos:** Meu roadmap inclui Arquitetura Distribuída, **Microsserviços**, Event-Driven Design e Mensageria com **Apache Kafka**.
 * 💡 Estou sempre aberto a colaborar em projetos e aprender com a comunidade.
 
 ---
@@ -52,16 +52,16 @@ Aqui estão alguns projetos que liderei ou que tenho orgulho do resultado:
     * **O que é:** Encurtador de URLs Enterprise-Ready desenvolvido com foco em alta performance e escalabilidade.
     * **Destaques:** Arquitetura limpa (**Clean Architecture**), persistência otimizada com **PostgreSQL**, algoritmo Base62 customizado e ambiente 100% containerizado com **Docker**, tratamento de erros padronizado (RFC 7807). Possui pipeline de **CI/CD** no GitHub Actions rodando testes automatizados (**Unitários, Integração e E2E**) antes de gerar a imagem Docker.
     * *Stack: Java 21, Spring Boot 3, PostgreSQL, Docker, Testcontainers, GitHub Actions, JUnit 5.*
+ 
+* **[Networker API (v1.0.0)](https://github.com/PabloTzeliks/contactlist-challenge)**
+    * **O que é:** Sistema de Gestão de Contatos (Address Book) com autenticação segura.
+    * **Engenharia:** Projetado com **Hexagonal Architecture** e **Clean Architecture** para suportar persistência poliglota futura. Implementa **Spring Security** com JWT e Roles.
+    * *Stack: Java 21, Spring Boot 4, Spring Security, JWT, Hexagonal e Clean Architecture.*
 
 * **[mvp-recruitment-system](https://github.com/equipe-javagle/mvp-recruitment-system)**
     * **O que é:** Sistema de recrutamento (MVP) onde atuei como **Tech Lead** e desenvolvedor principal.
     * **Destaques:** O projeto utiliza uma arquitetura robusta (+140 classes) com padrão de projeto Strategy, injeção de dependências (DTOs, Services, Repositories) e autenticação via token smples, utilizando o Driver JDBC para queries junto ao PostgreSQL.
     * *Tecnologias: Java, PostgreSQL (JDBC), Maven, JDBC, Strategy Pattern, Clean Architecture*
-
- * **[todolist](https://github.com/PabloTzeliks/todolist)**
-    * **O que é:** API RESTful desenvolvida com foco em Arquitetura Corporativa e boas práticas de Engenharia de Software, simulando um ambiente real de produção.
-    * **Destaques:** Refatoração completa (v2.0) implementando Design Patterns (DTO, Mapper) para desacoplamento de camadas e tratamento de erros padronizado (RFC 7807). O projeto conta com orquestração de ambientes via Docker, alternando entre H2 (Dev) e PostgreSQL (Prod) e Testes Automatizados.
-    * *Tecnologias: Java 17, Spring Boot 3, Spring JPA, PostgreSQL, H2Database, Docker, SpringDoc (Swagger), Bean Validation, JUnit 5, Clean Architecture*
 
 ---
 
