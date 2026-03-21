@@ -52,16 +52,16 @@ Aqui estão alguns projetos que liderei ou que tenho orgulho do resultado:
     * **O que é:** Encurtador de URLs Enterprise-Ready desenvolvido com foco em alta performance e escalabilidade.
     * **Destaques:** Arquitetura limpa (**Clean Architecture**), persistência otimizada com **PostgreSQL**, algoritmo Base62 customizado e ambiente 100% containerizado com **Docker**, tratamento de erros padronizado (RFC 7807). Possui pipeline de **CI/CD** no GitHub Actions rodando testes automatizados (**Unitários, Integração e E2E**) antes de gerar a imagem Docker.
     * *Stack: Java 21, Spring Boot 3, PostgreSQL, Docker, Testcontainers, GitHub Actions, JUnit 5.*
+
+* **[Time Trial System (IoT & Telemetria)](https://github.com/PabloTzeliks/time-trial-api)**
+    * **O que é:** Sistema distribuído de cronometragem e telemetria de alta precisão para corridas, processando eventos de hardware (ESP32/RFID) em tempo real.
+    * **Engenharia:** Arquitetura orientada a eventos. Ingestão via broker **MQTT**, processamento assíncrono em **Java/Spring Boot**, e cluster NoSQL com **Apache Cassandra** (consistência Quorum). Distribuição instantânea de pódio via **WebSockets** para Front-End e saída em API RESTful para **Machine Learning** em Python.
+    * *Stack: Java 21, Spring Boot 3, Cassandra (3 nodes), MQTT, WebSockets, Docker, Prometheus, Grafana.*
  
 * **[Networker API (v1.0.0)](https://github.com/PabloTzeliks/contactlist-challenge)**
     * **O que é:** Sistema de Gestão de Contatos (Address Book) com autenticação segura.
     * **Engenharia:** Projetado com **Hexagonal Architecture** e **Clean Architecture** para suportar persistência poliglota futura. Implementa **Spring Security** com JWT e Roles.
     * *Stack: Java 21, Spring Boot 4, Spring Security, JWT, Hexagonal e Clean Architecture.*
-
-* **[mvp-recruitment-system](https://github.com/equipe-javagle/mvp-recruitment-system)**
-    * **O que é:** Sistema de recrutamento (MVP) onde atuei como **Tech Lead** e desenvolvedor principal.
-    * **Destaques:** O projeto utiliza uma arquitetura robusta (+140 classes) com padrão de projeto Strategy, injeção de dependências (DTOs, Services, Repositories) e autenticação via token smples, utilizando o Driver JDBC para queries junto ao PostgreSQL.
-    * *Tecnologias: Java, PostgreSQL (JDBC), Maven, JDBC, Strategy Pattern, Clean Architecture*
 
 ---
 
