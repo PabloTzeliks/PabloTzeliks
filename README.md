@@ -5,7 +5,7 @@
 Sou **Aprendiz na WEG**, onde também participo do curso de Desenvolvimento de Sistemas do CentroWEG. Meu foco principal é o desenvolvimento **Back-end Java**, com um interesse especial em arquitetura de sistemas e na construção de APIs robustas.
 
 * 🔭 **Atualmente:** Estou aprofundando meus conhecimentos em **Spring Security (OAuth2/JWT)**, **Arquitetura Hexagonal**, bancos **NoSQL** (MongoDB, Neo4j, Cassandra) e Infraestrutura em Nuvem com **AWS**.
-* 🎯 **Próximos Passos:** Meu roadmap inclui Arquitetura Distribuída, **Microsserviços**, Event-Driven Design e Mensageria com **Apache Kafka**.
+* 🎯 **Próximos Passos:** Meu roadmap inclui Arquitetura Distribuída, **Microsserviços**, Event-Driven Design, Mensageria com **Apache Kafka** e Caching Avançado com **Redis**.
 * 💡 Estou sempre aberto a colaborar em projetos e aprender com a comunidade.
 
 ---
@@ -48,10 +48,11 @@ Minhas ferramentas principais são focadas no ecossistema Java, mas tenho uma ba
 
 Aqui estão alguns projetos que liderei ou que tenho orgulho do resultado:
 
-* **[blink-link (URL Shortener v2.0)](https://github.com/PabloTzeliks/blink-link)**
-    * **O que é:** Encurtador de URLs Enterprise-Ready desenvolvido com foco em alta performance e escalabilidade.
-    * **Destaques:** Arquitetura limpa (**Clean Architecture**), persistência otimizada com **PostgreSQL**, algoritmo Base62 customizado e ambiente 100% containerizado com **Docker**, tratamento de erros padronizado (RFC 7807). Possui pipeline de **CI/CD** no GitHub Actions rodando testes automatizados (**Unitários, Integração e E2E**) antes de gerar a imagem Docker.
-    * *Stack: Java 21, Spring Boot 3, PostgreSQL, Docker, Testcontainers, GitHub Actions, JUnit 5.*
+* **[BlinkLink (URL Shortener Enterprise v3.0)](https://github.com/PabloTzeliks/blink-link)**
+    * **O que é:** Uma API REST robusta e segura para encurtamento de URLs, evoluída de um MVP para um sistema de produção escalável.
+    * **Destaques da Engenharia:** Desenvolvido com **Clean Architecture** e **DDD puro**. Implementa uma camada completa de **IAM** com autenticação stateless via **JWT em HttpOnly Cookies** e onboarding com **OAuth2** (Google/GitHub). Controle de acesso via Roles (RBAC) e Tiers de usuários. Possui um motor de **Garbage Collection assíncrono** para limpeza de URLs expiradas utilizando locks nativos do **PostgreSQL** (`FOR UPDATE SKIP LOCKED`).
+    * **Qualidade:** Pipeline de **CI/CD** via GitHub Actions garantindo **80% de cobertura** de código com testes Unitários, E2E e Integração utilizando **Testcontainers** contra bancos reais.
+    * *Stack: Java 21, Spring Boot 4, Spring Security, PostgreSQL, FlyWay, Docker, Testcontainers, CI/CD.*
 
 * **[Time Trial System (IoT & Telemetria)](https://github.com/PabloTzeliks/time-trial-api)**
     * **O que é:** Sistema distribuído de cronometragem e telemetria de alta precisão para corridas, processando eventos de hardware (ESP32/RFID) em tempo real.
