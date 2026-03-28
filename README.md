@@ -17,7 +17,7 @@ Minhas ferramentas principais são focadas no ecossistema Java, mas tenho uma ba
 **Back-End & Banco de Dados:**
 <p align="left">
   <a href="https://skillicons.dev">
-    <img src="https://go-skill-icons.vercel.app/api/icons?i=java,spring,postgres,mysql,cassandra,hibernate" alt="Java, Spring, Postgres, MySQL, Cassandra, Hibernate"/>
+    <img src="https://go-skill-icons.vercel.app/api/icons?i=java,spring,postgres,mysql,cassandra,redis" alt="Java, Spring, Postgres, MySQL, Cassandra, Redis"/>
   </a>
 </p>
 
