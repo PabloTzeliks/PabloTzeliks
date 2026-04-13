@@ -1,78 +1,90 @@
 <img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=143478&height=120&section=header"/>
 
-### Olá, eu sou o Pablo Tzeliks! 👋
+### Pablo Tzeliks
 
-Sou **Aprendiz na WEG**, onde também participo do curso de Desenvolvimento de Sistemas do CentroWEG. Meu foco principal é o desenvolvimento **Back-end Java**, com um interesse especial em arquitetura de sistemas e na construção de APIs robustas.
+Desenvolvedor Back-End focado em Java e no ecossistema Spring, com interesse em sistemas distribuídos, arquitetura orientada a eventos e design de APIs. Construo projetos que me forçam a resolver problemas reais de engenharia — concorrência, consistência, tolerância a falhas — em vez de exercícios didáticos.
 
-* 🔭 **Atualmente:** Estou aprofundando meus conhecimentos em **Spring Security (OAuth2/JWT)**, **Arquitetura Hexagonal**, bancos **NoSQL** (MongoDB, Neo4j, Cassandra) e Infraestrutura em Nuvem com **AWS**.
-* 🎯 **Próximos Passos:** Meu roadmap inclui Arquitetura Distribuída, **Microsserviços**, Event-Driven Design, Mensageria com **Apache Kafka** e Caching Avançado com **Redis**.
-* 💡 Estou sempre aberto a colaborar em projetos e aprender com a comunidade.
+Atualmente sou aprendiz na **WEG**, cursando Desenvolvimento de Sistemas no CentroWEG. Acredito em *build in public*: os projetos abaixo estão todos com código, ADRs e issues visíveis.
 
----
-
-### 💻 Tecnologias e Ferramentas
-
-Minhas ferramentas principais são focadas no ecossistema Java, mas tenho uma base Full Stack sólida.
-
-**Back-End & Banco de Dados:**
-<p align="left">
-  <a href="https://skillicons.dev">
-    <img src="https://go-skill-icons.vercel.app/api/icons?i=java,spring,postgres,mysql,cassandra,redis" alt="Java, Spring, Postgres, MySQL, Cassandra, Redis"/>
-  </a>
-</p>
-
-**Cloud & DevOps:**
-<p align="left">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=aws,docker,githubactions,git,linux,maven" alt="AWS, Docker, Actions, Git, Linux, Maven"/>
-  </a>
-</p>
-
-**Front-End & Web:**
-<p align="left">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=html,css,js,typescript,nodejs,python" alt="Web Stack"/>
-  </a>
-</p>
-
-**Ferramentas, Design & Qualidade:**
-<p align="left">
-  <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=idea,postman,figma,obsidian,md,vercel" alt="IntelliJ, Postman, Figma, Obsidian, Markdown, Vercel"/>
-  </a>
-</p>
+💬 Sempre aberto a colaborar em projetos open-source e a conversar com a comunidade.
 
 ---
 
-### 🚀 Meus Projetos Principais
+### 💻 Stack Principal
 
-Aqui estão alguns projetos que liderei ou que tenho orgulho do resultado:
+<p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://go-skill-icons.vercel.app/api/icons?i=java,spring,postgres,mysql,cassandra,redis" alt="Java, Spring, Postgres, MySQL, Cassandra, Redis e "/>
+  </a>
+</p>
 
-* **[BlinkLink (URL Shortener Enterprise v3.0)](https://github.com/PabloTzeliks/blink-link)**
-    * **O que é:** Uma API REST robusta e segura para encurtamento de URLs, evoluída de um MVP para um sistema de produção escalável.
-    * **Destaques da Engenharia:** Desenvolvido com **Clean Architecture** e **DDD puro**. Implementa uma camada completa de **IAM** com autenticação stateless via **JWT em HttpOnly Cookies** e onboarding com **OAuth2** (Google/GitHub). Controle de acesso via Roles (RBAC) e Tiers de usuários. Possui um motor de **Garbage Collection assíncrono** para limpeza de URLs expiradas utilizando locks nativos do **PostgreSQL** (`FOR UPDATE SKIP LOCKED`).
-    * **Qualidade:** Pipeline de **CI/CD** via GitHub Actions garantindo **80% de cobertura** de código com testes Unitários, E2E e Integração utilizando **Testcontainers** contra bancos reais.
-    * *Stack: Java 21, Spring Boot 4, Spring Security, PostgreSQL, FlyWay, Docker, Testcontainers, CI/CD.*
+<p align="left">
+  <a href="https://skillicons.dev">
+    <img src="https://go-skill-icons.vercel.app/api/icons?i=kafka,docker,aws,githubactions,git,linux" alt="Kafka, Docker, AWS, GitHub Actions, Git, Linux"/>
+  </a>
+</p>
 
-* **[Time Trial System (IoT & Telemetria)](https://github.com/PabloTzeliks/time-trial-api)**
-    * **O que é:** Sistema distribuído de cronometragem e telemetria de alta precisão para corridas, processando eventos de hardware (ESP32/RFID) em tempo real.
-    * **Engenharia:** Arquitetura orientada a eventos. Ingestão via broker **MQTT**, processamento assíncrono em **Java/Spring Boot**, e cluster NoSQL com **Apache Cassandra** (consistência Quorum). Distribuição instantânea de pódio via **WebSockets** para Front-End e saída em API RESTful para **Machine Learning** em Python.
-    * *Stack: Java 21, Spring Boot 3, Cassandra (3 nodes), MQTT, WebSockets, Docker, Prometheus, Grafana.*
- 
-* **[Networker API (v1.0.0)](https://github.com/PabloTzeliks/contactlist-challenge)**
-    * **O que é:** Sistema de Gestão de Contatos (Address Book) com autenticação segura.
-    * **Engenharia:** Projetado com **Hexagonal Architecture** e **Clean Architecture** para suportar persistência poliglota futura. Implementa **Spring Security** com JWT e Roles.
-    * *Stack: Java 21, Spring Boot 4, Spring Security, JWT, Hexagonal e Clean Architecture.*
+Também trabalho com MySQL, TypeScript/Node.js e Python quando o projeto pede, tenho conhecimento sólido em Front-End também — mas meu foco de evolução em Back-End.
 
 ---
 
-### 📊 Minha Atividade no GitHub
+### 🚀 Projetos em Destaque
 
-Aqui estão algumas estatísticas e um gráfico da minha atividade nos últimos meses.
+#### [Ciphernance — Core banking engine distribuído](https://github.com/PabloTzeliks/Ciphernance) &nbsp;·&nbsp; 🚧 em desenvolvimento ativo
+
+Motor de core banking construído deliberadamente como exercício de engenharia distribuída de ponta a ponta. É onde saio da aplicação monolítica bem estruturada e começo a lidar com os problemas reais de topologia — consistência eventual, saga distribuída, cache em múltiplas camadas, autorização descentralizada.
+
+**Arquitetura decidida (documentada em ADRs públicos):**
+- **Seis microsserviços** com responsabilidades separadas por domínio: Identity, Account/Wallet, Transaction, Fraud, Audit e API Gateway.
+- **Saga coreografada** em vez de orquestrada — escolhida para evitar um orquestrador central como ponto de acoplamento e falha, ao custo de rastreabilidade mais complexa (trade-off mitigado via Audit Service imutável).
+- **Autorização eventualmente consistente via Policy Agents** distribuídos em cada serviço, com cache de duas camadas (Caffeine L1 local + Redis L2 compartilhado), sincronizados a partir do Identity Service via Kafka. Inspirado em XACML (PAP/PIP/PDP/PEP) mas com DSL ABAC própria em YAML.
+- **Event Sourcing escopado ao Transaction Service** — aplicado onde o histórico imutável de eventos é requisito de domínio, não como padrão arquitetural genérico aplicado a tudo.
+- **Modelagem de domínio** com User → Account(s) → Wallet(s) → Balance, com separação explícita entre estado de identidade (Identity Service) e estado financeiro (Wallet Service).
+
+**Em execução agora:** Modelando Identity Service, com Clean e Hexagonal arch, aplicando CQRS, aprendendo sobre Eventos com Kafka e Agent Policy para o ABAC real com autorização por contexto, a real fonte da verdade do Sistema.
+
+**Planejado:** implementação incremental dos serviços seguindo a ordem Identity → Wallet → Transaction → Fraud → Audit → Gateway, com Testcontainers cobrindo os contratos de integração entre eles.
+
+**Stack:** Java 21, Spring Boot 4, Spring Cloud Gateway, Spring Authorization Server, Apache Kafka, PostgreSQL, Redis, Neo4j, Micrometer + Prometheus + Grafana, JUnit 5 + Testcontainers, Maven (monorepo).
+
+📋 [GitHub Project público](https://github.com/PabloTzeliks/Ciphernance) com issues e ADRs acompanhando cada decisão.
+
+---
+
+#### [Time Trial System — Cronometragem distribuída em tempo real](https://github.com/PabloTzeliks/time-trial-api)
+
+Sistema de telemetria e cronometragem de alta precisão para corridas, processando eventos vindos de hardware real (ESP32 + RFID) em tempo real. MVP funcional apresentado à supervisão da WEG.
+
+**Decisões de engenharia:**
+- **Arquitetura orientada a eventos.** Ingestão via broker MQTT desacopla o hardware do processamento — o cronômetro não cai se o back-end reiniciar.
+- **Cluster Cassandra com 3 nodes e consistência Quorum.** Escolhido sobre um relacional por dois motivos: padrão de escrita dominante (eventos imutáveis de passagem) e necessidade de tolerar a queda de um nó sem perder leituras consistentes.
+- **Distribuição instantânea de pódio via WebSockets**, permitindo que o front-end reaja a cada volta sem polling.
+- **Saída RESTful** expondo os dados para análise posterior em Python (Machine Learning).
+- Observabilidade com Prometheus + Grafana.
+
+**Stack:** Java 21, Spring Boot 3, Apache Cassandra, MQTT, WebSockets, Docker, Prometheus, Grafana.
+
+---
+
+#### [BlinkLink — URL Shortener v3](https://github.com/PabloTzeliks/blink-link)
+
+API REST para encurtamento de URLs, evoluída de um MVP simples até uma aplicação com IAM completo e garbage collection assíncrono. É o projeto onde exercito rigor de engenharia: testes, CI/CD, segurança e design de domínio.
+
+**Decisões de engenharia:**
+- **Organizado segundo Clean Architecture e DDD tático** — camadas de domínio, aplicação e infraestrutura bem separadas, com dependências apontando para dentro.
+- **IAM stateless** com JWT em cookies HttpOnly (mitigando XSS), onboarding via OAuth2 com Google e GitHub, e controle de acesso por Roles (RBAC) combinado com Tiers de usuário.
+- **Garbage Collection assíncrono** para URLs expiradas usando `SELECT ... FOR UPDATE SKIP LOCKED` do PostgreSQL, permitindo múltiplos workers concorrentes sem contenção.
+- **Testes de integração com Testcontainers** rodando contra PostgreSQL real — não H2, não mocks — cobrindo os fluxos críticos de autenticação e o pipeline de expiração.
+- **CI/CD** via GitHub Actions executando a suíte completa a cada push.
+
+**Stack:** Java 21, Spring Boot 4, Spring Security, PostgreSQL, Flyway, Docker, Testcontainers, GitHub Actions.
+
+---
+
+### 📊 GitHub
 
 <div align="center">
   <img height="180em" src="https://github-readme-stats-fast.vercel.app/api?username=PabloTzeliks&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide=commits"/>
-  
   <img height="180em" src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=PabloTzeliks&layout=compact&theme=tokyonight"/>
 </div>
 
@@ -82,7 +94,7 @@ Aqui estão algumas estatísticas e um gráfico da minha atividade nos últimos 
 
 ---
 
-<h2 align="center">🌐 Conecte-se Comigo</h2>
+<h2 align="center">Conecte-se Comigo</h2>
 
 <p align="center">
   <a href="https://www.linkedin.com/in/pablo-ruan-tzeliks" target="_blank">
