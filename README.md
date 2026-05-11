@@ -6,7 +6,7 @@ Construo sistemas deliberadamente complexos para entendê-los por dentro — con
 
 **Disponível a partir de agosto de 2026.**
 
-[pablotzeliks.github.io](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [linkedin.com/in/pablo-ruan-tzeliks](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
+[Portfólio](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
 
 ---
 
@@ -20,11 +20,9 @@ Seis microsserviços. Quinze ADRs antes de qualquer código.
 
 **Decisões centrais:**
 
-— **Choreography sobre Orchestration.** Sem orquestrador central como ponto único de falha; rastreabilidade mais complexa mitigada pelo Audit Service imutável que captura a cadeia de eventos completa.
-
-— **ABAC com Policy Agents distribuídos.** Cache em duas camadas (Caffeine L1 + Redis L2), sincronizado via Kafka — consistência eventual aceita e documentada como trade-off deliberado.
-
-— **Event Sourcing escopado ao Transaction Service.** Saldo derivado do histórico de transações, não armazenado como coluna — aplicado onde o domínio exige, não onde seria conveniente.
+- **Choreography sobre Orchestration.** Sem orquestrador central como ponto único de falha; rastreabilidade mais complexa mitigada pelo Audit Service imutável que captura a cadeia de eventos completa.
+- **ABAC com Policy Agents distribuídos.** Cache em duas camadas (Caffeine L1 + Redis L2), sincronizado via Kafka — consistência eventual aceita e documentada como trade-off deliberado.
+- **Event Sourcing escopado ao Transaction Service.** Saldo derivado do histórico de transações, não armazenado como coluna — aplicado onde o domínio exige, não onde seria conveniente.
 
 **Em andamento:** Identity Service — estrutura de políticas ABAC com DSL YAML, agentes em cada serviço sincronizados via Kafka.
 
@@ -40,23 +38,17 @@ URL shortener reconstruído quatro vezes — cada iteração foi o veículo para
 
 **v3 — entregue:**
 
-— IAM stateless: JWT em cookies HttpOnly, OAuth2 com Google e GitHub, RBAC por Roles e Tiers de usuário.
-
-— Garbage collection assíncrono com `SELECT ... FOR UPDATE SKIP LOCKED` — workers concorrentes sem contenção de lock.
-
-— Testcontainers contra PostgreSQL real — não H2, não mocks. CI/CD com GitHub Actions a cada push.
+- IAM stateless: JWT em cookies HttpOnly, OAuth2 com Google e GitHub, RBAC por Roles e Tiers de usuário.
+- Garbage collection assíncrono com `SELECT ... FOR UPDATE SKIP LOCKED` — workers concorrentes sem contenção de lock.
+- Testcontainers contra PostgreSQL real — não H2, não mocks. CI/CD com GitHub Actions a cada push.
 
 **v4 — em construção:**
 
-— Cache Redis com estratégia cache-aside e alinhamento de TTL entre cache e banco.
-
-— Rate limiting por usuário e por endpoint.
-
-— Refatoração com Spring Modulith — modularização explícita sem migrar para microsserviços.
-
-— Banco colunar para o módulo de Analytics com ingestão via Kafka.
-
-— Primeiro deploy real na AWS.
+- Cache Redis com estratégia cache-aside e alinhamento de TTL entre cache e banco.
+- Rate limiting por usuário e por endpoint.
+- Refatoração com Spring Modulith — modularização explícita sem migrar para microsserviços.
+- Banco colunar para o módulo de Analytics com ingestão via Kafka.
+- Primeiro deploy real na AWS.
 
 `Java 21 · Spring Boot 4 · Spring Security · Spring Modulith · PostgreSQL · Redis · Kafka · Flyway · Docker · Testcontainers · GitHub Actions`
 
@@ -109,7 +101,7 @@ Duas implementações paralelas do mesmo gateway — uma deliberadamente caótic
 - Event Sourcing para derivar saldo do histórico imutável de transações
 - ~80% de cobertura entre testes unitários, de integração e end-to-end
 
-`Java 21`
+`Java 21 · PostgreSQL · Maven`
 
 ---
 
@@ -148,4 +140,4 @@ Concluindo o CentroWEG, com disponibilidade plena a partir de **agosto de 2026**
 
 ---
 
-[pablotzeliks.github.io](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
+[Portfólio](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
