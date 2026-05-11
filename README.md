@@ -6,7 +6,7 @@ Construo sistemas deliberadamente complexos para entendê-los por dentro — con
 
 **Disponível a partir de agosto de 2026.**
 
-[pablotzeliks.github.io](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [linkedin.com/in/pablo-ruan-tzeliks](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
+[Portfólio Pessoal](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [linkedin.com/in/pablo-ruan-tzeliks](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
 
 ---
 
@@ -14,21 +14,21 @@ Construo sistemas deliberadamente complexos para entendê-los por dentro — con
 
 ### [Ciphernance](https://github.com/PabloTzeliks/Ciphernance) · em desenvolvimento ativo
 
-Motor de core banking construído para entender sistemas distribuídos por dentro. O domínio bancário não foi escolhido arbitrariamente — é um dos poucos domínios onde saga, autorização descentralizada e event sourcing têm que coexistir porque consistência, rastreabilidade e segurança são requisitos do negócio, não opções arquiteturais. Nenhum desses padrões foi adicionado por interesse acadêmico; todos foram forçados pelo domínio.
+Motor de core banking construído para entender sistemas distribuídos por dentro — um domínio onde saga, autorização descentralizada e event sourcing têm que coexistir por requisito, não por escolha.
 
-Seis microsserviços coordenados por choreography-based saga. Quinze ADRs documentam cada decisão antes do código ser escrito.
+Seis microsserviços. Quinze ADRs antes de qualquer código.
 
-**Decisões que definem o sistema:**
+**Decisões centrais:**
 
-— **Choreography sobre Orchestration (ADR 01).** Um orquestrador central cria acoplamento e ponto único de falha. A coreografia aceita rastreabilidade mais complexa como custo — mitigado pelo Audit Service imutável que captura a cadeia de eventos completa.
+— **Choreography sobre Orchestration.** Sem orquestrador central como ponto único de falha; rastreabilidade mais complexa mitigada pelo Audit Service imutável que captura a cadeia de eventos completa.
 
-— **ABAC eventualmente consistente com Policy Agents distribuídos (ADR 02).** Cada serviço hospeda um agente com cache em duas camadas (Caffeine L1 local + Redis L2 compartilhado). Atualizações de política partem do Identity Service via Kafka. O trade-off — uma janela de inconsistência na avaliação de políticas — está documentado e aceito deliberadamente.
+— **ABAC com Policy Agents distribuídos.** Cache em duas camadas (Caffeine L1 + Redis L2), sincronizado via Kafka — consistência eventual aceita e documentada como trade-off deliberado.
 
-— **Event Sourcing escopado ao Transaction Service (ADR 03).** Aplicado onde o histórico imutável de transações é requisito do domínio — saldo derivado do histórico, não armazenado como coluna. Não como padrão genérico aplicado ao sistema todo.
+— **Event Sourcing escopado ao Transaction Service.** Saldo derivado do histórico de transações, não armazenado como coluna — aplicado onde o domínio exige, não onde seria conveniente.
 
-**Status atual:** Identity Service em desenvolvimento. Domínio modelado além dos agregados User e Account; trabalho em andamento na estrutura de políticas ABAC — DSL YAML como fonte única da verdade para autorização, com agentes em cada serviço recebendo atualizações via Kafka.
+**Em andamento:** Identity Service — estrutura de políticas ABAC com DSL YAML, agentes em cada serviço sincronizados via Kafka.
 
-**Stack:** Java 21, Spring Boot 4, Apache Kafka, PostgreSQL, Redis, Neo4j, Micrometer + Prometheus + Grafana, JUnit 5 + Testcontainers, Maven (monorepo).
+`Java 21 · Spring Boot 4 · Kafka · PostgreSQL · Redis · Neo4j · Prometheus · Grafana · Testcontainers · Maven`
 
 [Repositório](https://github.com/PabloTzeliks/Ciphernance) — código, ADRs e roadmap públicos.
 
@@ -36,29 +36,29 @@ Seis microsserviços coordenados por choreography-based saga. Quinze ADRs docume
 
 ### [BlinkLink](https://github.com/PabloTzeliks/blink-link) · v3 disponível · v4 em desenvolvimento
 
-URL shortener reconstruído quatro vezes — não por insatisfação com a versão anterior, mas porque cada iteração foi o veículo para um problema específico de engenharia. A simplicidade do domínio é proposital: o foco está no rigor da solução, não na complexidade do negócio.
+URL shortener reconstruído quatro vezes — cada iteração foi o veículo para um problema específico de engenharia. A simplicidade do domínio é proposital: o foco está no rigor da solução, não na complexidade do negócio.
 
-**v3 — o que foi construído:**
+**v3 — entregue:**
 
-— IAM stateless com JWT em cookies HttpOnly (mitigando XSS), OAuth2 com Google e GitHub, controle de acesso por Roles (RBAC) combinado com Tiers de usuário.
+— IAM stateless: JWT em cookies HttpOnly, OAuth2 com Google e GitHub, RBAC por Roles e Tiers de usuário.
 
-— Garbage collection assíncrono para URLs expiradas com `SELECT ... FOR UPDATE SKIP LOCKED` — múltiplos workers concorrentes sem contenção de lock.
+— Garbage collection assíncrono com `SELECT ... FOR UPDATE SKIP LOCKED` — workers concorrentes sem contenção de lock.
 
-— Testes de integração com Testcontainers rodando contra PostgreSQL real — não H2, não mocks. CI/CD via GitHub Actions executando a suíte completa a cada push.
+— Testcontainers contra PostgreSQL real — não H2, não mocks. CI/CD com GitHub Actions a cada push.
 
 **v4 — em construção:**
 
-— Camada de cache Redis com estratégia cache-aside e alinhamento de TTL entre cache e banco.
+— Cache Redis com estratégia cache-aside e alinhamento de TTL entre cache e banco.
 
 — Rate limiting por usuário e por endpoint.
 
-— Refatoração da base com Spring Modulith — modularização explícita sem migração para microsserviços.
+— Refatoração com Spring Modulith — modularização explícita sem migrar para microsserviços.
 
-— Banco colunar para o módulo de Analytics, com ingestão via Kafka.
+— Banco colunar para o módulo de Analytics com ingestão via Kafka.
 
 — Primeiro deploy real na AWS.
 
-**Stack:** Java 21, Spring Boot 4, Spring Security, Spring Modulith, PostgreSQL, Redis, Apache Kafka, Flyway, Docker, Testcontainers, GitHub Actions.
+`Java 21 · Spring Boot 4 · Spring Security · Spring Modulith · PostgreSQL · Redis · Kafka · Flyway · Docker · Testcontainers · GitHub Actions`
 
 ---
 
@@ -66,42 +66,69 @@ URL shortener reconstruído quatro vezes — não por insatisfação com a vers�
 
 Programa industrial de 3.200 horas dentro da WEG, agosto de 2024 a julho de 2026. O currículo oferece amplitude; a profundidade construo nos projetos, levando cada problema além do que o escopo do curso exige.
 
-Ao longo do programa, liderei ou co-liderei quatro projetos com decisões de engenharia reais:
+**InfoWEG** · Product Owner e Tech Lead
 
-**InfoWEG** · Plataforma de comunicação interna com entrega segmentada por perfil de usuário. Product Owner e Tech Lead do projeto de classe. Java, Spring Boot, MySQL.
+Plataforma de comunicação interna com entrega segmentada por perfil — originei o conceito, defini a arquitetura inicial e coordenei o time de classe com Scrum.
 
-<br>
-
-**SynapseRH** · Sistema de recrutamento com motor de matchmaking por habilidades. Tech Lead e Lead Backend Developer em equipe de cinco pessoas — cerca de 80 issues gerenciadas. Arquitetura em quatro camadas com DDD explícito, Value Objects no domínio (Email, CPF, Endereço, Senha), Strategy Pattern na camada de apresentação, algoritmo de matchmaking com pontuação ponderada. Apresentado a painel externo de RH. Java 21, PostgreSQL, JDBC, MapStruct.
+`Java · Spring Boot · MySQL`
 
 <br>
 
-**Time Trial System** · Plataforma de telemetria IoT em tempo real com hardware físico (ESP32 + RFID). Tech Lead e Arquiteto. Saímos do stack esperado pelo curso — Node-RED com MySQL — e reconstruímos o problema com arquitetura orientada a eventos. Ingestão via MQTT, Cassandra em cluster de 3 nós com consistência QUORUM, resultados em tempo real via WebSocket, análise em Python com K-Means. Demo ao vivo para Professores e Supervisores de diferentes áreas do CentroWEG. Java 21, Spring Boot 3, Docker.
+**SynapseRH** · Tech Lead e Lead Backend Developer
+
+Sistema de recrutamento com matchmaking por habilidades — capstone da unidade de Técnicas de Programação, equipe de cinco pessoas, ~80 issues gerenciadas.
+
+- Arquitetura em quatro camadas com DDD explícito e Value Objects no domínio (Email, CPF, Endereço, Senha)
+- Algoritmo de matchmaking com pontuação ponderada contra requisitos da vaga
+- Strategy Pattern no CLI, MapStruct entre camadas de aplicação e apresentação
+- Apresentado a painel externo de RH
+
+`Java 21 · PostgreSQL · JDBC · MapStruct`
 
 <br>
 
-**Payment Gateway Core** · Estudo comparativo entre duas implementações paralelas do mesmo gateway — uma deliberadamente caótica, uma deliberadamente rigorosa. Co-desenvolvedor. Na implementação limpa: transaction manager ACID customizado via `ThreadLocal` + JDBC sem Spring, Execute Around Pattern para centralizar o ciclo de vida das conexões, Event Sourcing para derivar saldo do histórico imutável de transações, ~80% de cobertura entre testes unitários, de integração e end-to-end. Java 21.
+**Time Trial System** · Tech Lead e Arquiteto
+
+Plataforma de telemetria IoT em tempo real com hardware físico (ESP32 + RFID) — o time saiu do stack esperado pelo curso e reconstruiu o problema do zero com arquitetura orientada a eventos.
+
+- Ingestão assíncrona via MQTT, Cassandra em cluster de 3 nós com consistência QUORUM
+- Distribuição de resultados em tempo real via WebSocket sem polling
+- Módulo de análise em Python com K-Means e Streamlit
+- Demo ao vivo para Professores e Supervisores de diferentes áreas do CentroWEG
+
+`Java 21 · Spring Boot 3 · Apache Cassandra · Docker`
+
+<br>
+
+**Payment Gateway Core** · Co-desenvolvedor
+
+Duas implementações paralelas do mesmo gateway — uma deliberadamente caótica, uma deliberadamente rigorosa — para estudar por contraste o valor de arquitetura disciplinada.
+
+- Transaction manager ACID customizado via `ThreadLocal` + JDBC sem Spring
+- Execute Around Pattern para centralizar o ciclo de vida das conexões JDBC
+- Event Sourcing para derivar saldo do histórico imutável de transações
+- ~80% de cobertura entre testes unitários, de integração e end-to-end
+
+`Java 21`
 
 ---
 
 ## Atualmente
 
-- Praticando CQRS, Event Sourcing, Sagas Coreografadas, Caching e Rate Limiting
+- Praticando CQRS, Event Sourcing, Sagas Coreografadas e aplicações com Redis
+- Estudando ABAC, Kafka, AWS e bancos colunares
 - Lendo *Fundamentals of Software Architecture: An Engineering Approach*
-- Estudando Kafka, autorização baseada em atributos (ABAC), Sistemas Distribuídos, Aplicações com Redis e Bancos Colunares
 
 ---
 
 ## Stack
 
-| | |
-|---|---|
-| **Runtime** | Java 21 · Spring Boot |
-| **Dados** | PostgreSQL · Redis · Apache Kafka · Neo4j · MySQL · Apache Cassandra |
-| **Infra** | Docker · AWS · GitHub Actions · Linux |
-| **Observabilidade** | Micrometer · Prometheus · Grafana |
-| **Testes** | JUnit 5 · Mockito · Testcontainers |
-| **Build** | Maven |
+- **Runtime:** Java 21 · Spring Boot
+- **Dados:** PostgreSQL · Redis · Apache Kafka · Neo4j · MySQL · Apache Cassandra
+- **Infra:** Docker · AWS · GitHub Actions · Linux
+- **Observabilidade:** Micrometer · Prometheus · Grafana
+- **Testes:** JUnit 5 · Mockito · Testcontainers
+- **Build:** Maven
 
 Trabalho com TypeScript/Node.js e Python quando o projeto demanda. Tenho base sólida em frontend — meu foco de aprofundamento é backend.
 
@@ -121,4 +148,4 @@ Concluindo o CentroWEG, com disponibilidade plena a partir de **agosto de 2026**
 
 ---
 
-[pablotzeliks.github.io](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
+[Portfólio Pessoal](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
