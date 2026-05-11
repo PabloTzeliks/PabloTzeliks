@@ -6,7 +6,7 @@ Construo sistemas deliberadamente complexos para entendê-los por dentro — con
 
 **Disponível a partir de agosto de 2026.**
 
-[Portfólio Pessoal](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [linkedin.com/in/pablo-ruan-tzeliks](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
+[Portfólio Pessoal](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [Email](mailto:devpablotzeliks@gmail.com)
 
 ---
 
@@ -148,4 +148,4 @@ Concluindo o CentroWEG, com disponibilidade plena a partir de **agosto de 2026**
 
 ---
 
-[Portfólio Pessoal](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
+[Portfólio Pessoal](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [Email](mailto:devpablotzeliks@gmail.com)
