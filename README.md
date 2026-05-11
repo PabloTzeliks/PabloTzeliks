@@ -1,115 +1,143 @@
-<img width=100% src="https://capsule-render.vercel.app/api?type=waving&color=143478&height=120&section=header"/>
+# Pablo Tzeliks
 
-### Pablo Tzeliks
+Desenvolvedor de software Back-End. Java, Spring, sistemas distribuídos. Jaraguá do Sul, Brasil.
 
-Desenvolvedor Back-End focado em Java e no ecossistema Spring, com interesse em sistemas distribuídos, arquitetura orientada a eventos e design de APIs. Construo projetos que me forçam a resolver problemas reais de engenharia — concorrência, consistência, tolerância a falhas — em vez de exercícios didáticos.
+Construo sistemas deliberadamente complexos para entendê-los por dentro — consistência eventual, saga distribuída, autorização descentralizada, design de domínio. Não busco a solução mais simples — busco a que force o problema de engenharia real.
 
-Atualmente sou aprendiz na **WEG**, cursando Desenvolvimento de Sistemas no CentroWEG. Acredito em *build in public*: os projetos abaixo estão todos com código, ADRs e issues visíveis.
+**Disponível a partir de agosto de 2026.**
 
-💬 Sempre aberto a colaborar em projetos open-source e a conversar com a comunidade.
-
----
-
-### 💻 Stack Principal
-
-<p align="left">
-  <a href="https://skillicons.dev">
-    <img src="https://go-skill-icons.vercel.app/api/icons?i=java,spring,postgres,mysql,cassandra,redis" alt="Java, Spring, Postgres, MySQL, Cassandra, Redis e "/>
-  </a>
-</p>
-
-<p align="left">
-  <a href="https://skillicons.dev">
-    <img src="https://go-skill-icons.vercel.app/api/icons?i=kafka,docker,aws,githubactions,git,linux" alt="Kafka, Docker, AWS, GitHub Actions, Git, Linux"/>
-  </a>
-</p>
-
-Também trabalho com MySQL, TypeScript/Node.js e Python quando o projeto pede, tenho conhecimento sólido em Front-End também — mas meu foco de evolução em Back-End.
+[Portfólio](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
 
 ---
 
-### 🚀 Projetos em Destaque
+## Projetos Pessoais
 
-#### [Ciphernance — Core banking engine distribuído](https://github.com/PabloTzeliks/Ciphernance) &nbsp;·&nbsp; 🚧 em desenvolvimento ativo
+### [Ciphernance](https://github.com/PabloTzeliks/Ciphernance) · em desenvolvimento ativo
 
-Motor de core banking construído deliberadamente como exercício de engenharia distribuída de ponta a ponta. É onde saio da aplicação monolítica bem estruturada e começo a lidar com os problemas reais de topologia — consistência eventual, saga distribuída, cache em múltiplas camadas, autorização descentralizada.
+Motor de core banking construído para entender sistemas distribuídos por dentro — um domínio onde saga, autorização descentralizada e event sourcing têm que coexistir por requisito, não por escolha.
 
-**Arquitetura decidida (documentada em ADRs públicos):**
-- **Seis microsserviços** com responsabilidades separadas por domínio: Identity, Account/Wallet, Transaction, Fraud, Audit e API Gateway.
-- **Saga coreografada** em vez de orquestrada — escolhida para evitar um orquestrador central como ponto de acoplamento e falha, ao custo de rastreabilidade mais complexa (trade-off mitigado via Audit Service imutável).
-- **Autorização eventualmente consistente via Policy Agents** distribuídos em cada serviço, com cache de duas camadas (Caffeine L1 local + Redis L2 compartilhado), sincronizados a partir do Identity Service via Kafka. Inspirado em XACML (PAP/PIP/PDP/PEP) mas com DSL ABAC própria em YAML.
-- **Event Sourcing escopado ao Transaction Service** — aplicado onde o histórico imutável de eventos é requisito de domínio, não como padrão arquitetural genérico aplicado a tudo.
-- **Modelagem de domínio** com User → Account(s) → Wallet(s) → Balance, com separação explícita entre estado de identidade (Identity Service) e estado financeiro (Wallet Service).
+Seis microsserviços. Quinze ADRs antes de qualquer código.
 
-**Em execução agora:** Modelando Identity Service, com Clean e Hexagonal arch, aplicando CQRS, aprendendo sobre Eventos com Kafka e Agent Policy para o ABAC real com autorização por contexto, a real fonte da verdade do Sistema.
+**Decisões centrais:**
 
-**Planejado:** implementação incremental dos serviços seguindo a ordem Identity → Wallet → Transaction → Fraud → Audit → Gateway, com Testcontainers cobrindo os contratos de integração entre eles.
+- **Choreography sobre Orchestration.** Sem orquestrador central como ponto único de falha; rastreabilidade mais complexa mitigada pelo Audit Service imutável que captura a cadeia de eventos completa.
+- **ABAC com Policy Agents distribuídos.** Cache em duas camadas (Caffeine L1 + Redis L2), sincronizado via Kafka — consistência eventual aceita e documentada como trade-off deliberado.
+- **Event Sourcing escopado ao Transaction Service.** Saldo derivado do histórico de transações, não armazenado como coluna — aplicado onde o domínio exige, não onde seria conveniente.
 
-**Stack:** Java 21, Spring Boot 4, Spring Cloud Gateway, Spring Authorization Server, Apache Kafka, PostgreSQL, Redis, Neo4j, Micrometer + Prometheus + Grafana, JUnit 5 + Testcontainers, Maven (monorepo).
+**Em andamento:** Identity Service — estrutura de políticas ABAC com DSL YAML, agentes em cada serviço sincronizados via Kafka.
 
-📋 [GitHub Project público](https://github.com/PabloTzeliks/Ciphernance) com issues e ADRs acompanhando cada decisão.
+`Java 21 · Spring Boot 4 · Kafka · PostgreSQL · Redis · Neo4j · Prometheus · Grafana · Testcontainers · Maven`
 
----
-
-#### [Time Trial System — Cronometragem distribuída em tempo real](https://github.com/PabloTzeliks/time-trial-api)
-
-Sistema de telemetria e cronometragem de alta precisão para corridas, processando eventos vindos de hardware real (ESP32 + RFID) em tempo real. MVP funcional apresentado à supervisão da WEG.
-
-**Decisões de engenharia:**
-- **Arquitetura orientada a eventos.** Ingestão via broker MQTT desacopla o hardware do processamento — o cronômetro não cai se o back-end reiniciar.
-- **Cluster Cassandra com 3 nodes e consistência Quorum.** Escolhido sobre um relacional por dois motivos: padrão de escrita dominante (eventos imutáveis de passagem) e necessidade de tolerar a queda de um nó sem perder leituras consistentes.
-- **Distribuição instantânea de pódio via WebSockets**, permitindo que o front-end reaja a cada volta sem polling.
-- **Saída RESTful** expondo os dados para análise posterior em Python (Machine Learning).
-- Observabilidade com Prometheus + Grafana.
-
-**Stack:** Java 21, Spring Boot 3, Apache Cassandra, MQTT, WebSockets, Docker, Prometheus, Grafana.
+[Repositório](https://github.com/PabloTzeliks/Ciphernance) — código, ADRs e roadmap públicos.
 
 ---
 
-#### [BlinkLink — URL Shortener v3](https://github.com/PabloTzeliks/blink-link)
+### [BlinkLink](https://github.com/PabloTzeliks/blink-link) · v3 disponível · v4 em desenvolvimento
 
-API REST para encurtamento de URLs, evoluída de um MVP simples até uma aplicação com IAM completo e garbage collection assíncrono. É o projeto onde exercito rigor de engenharia: testes, CI/CD, segurança e design de domínio.
+URL shortener reconstruído quatro vezes — cada iteração foi o veículo para um problema específico de engenharia. A simplicidade do domínio é proposital: o foco está no rigor da solução, não na complexidade do negócio.
 
-**Decisões de engenharia:**
-- **Organizado segundo Clean Architecture e DDD tático** — camadas de domínio, aplicação e infraestrutura bem separadas, com dependências apontando para dentro.
-- **IAM stateless** com JWT em cookies HttpOnly (mitigando XSS), onboarding via OAuth2 com Google e GitHub, e controle de acesso por Roles (RBAC) combinado com Tiers de usuário.
-- **Garbage Collection assíncrono** para URLs expiradas usando `SELECT ... FOR UPDATE SKIP LOCKED` do PostgreSQL, permitindo múltiplos workers concorrentes sem contenção.
-- **Testes de integração com Testcontainers** rodando contra PostgreSQL real — não H2, não mocks — cobrindo os fluxos críticos de autenticação e o pipeline de expiração.
-- **CI/CD** via GitHub Actions executando a suíte completa a cada push.
+**v3 — entregue:**
 
-**Stack:** Java 21, Spring Boot 4, Spring Security, PostgreSQL, Flyway, Docker, Testcontainers, GitHub Actions.
+- IAM stateless: JWT em cookies HttpOnly, OAuth2 com Google e GitHub, RBAC por Roles e Tiers de usuário.
+- Garbage collection assíncrono com `SELECT ... FOR UPDATE SKIP LOCKED` — workers concorrentes sem contenção de lock.
+- Testcontainers contra PostgreSQL real — não H2, não mocks. CI/CD com GitHub Actions a cada push.
 
----
+**v4 — em construção:**
 
-### 📊 GitHub
+- Cache Redis com estratégia cache-aside e alinhamento de TTL entre cache e banco.
+- Rate limiting por usuário e por endpoint.
+- Refatoração com Spring Modulith — modularização explícita sem migrar para microsserviços.
+- Banco colunar para o módulo de Analytics com ingestão via Kafka.
+- Primeiro deploy real na AWS.
 
-<div align="center">
-  <img height="180em" src="https://github-readme-stats-fast.vercel.app/api?username=PabloTzeliks&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide=commits"/>
-  <img height="180em" src="https://github-readme-stats-fast.vercel.app/api/top-langs/?username=PabloTzeliks&layout=compact&theme=tokyonight"/>
-</div>
-
-<div align="center">
-  <img src="https://github-readme-stats-fast.vercel.app/api/streak?username=PabloTzeliks&theme=tokyonight" alt="GitHub Streak" />
-</div>
+`Java 21 · Spring Boot 4 · Spring Security · Spring Modulith · PostgreSQL · Redis · Kafka · Flyway · Docker · Testcontainers · GitHub Actions`
 
 ---
 
-<h2 align="center">Conecte-se Comigo</h2>
+## Aprendizado — CentroWEG/SENAI
 
-<p align="center">
-  <a href="https://www.linkedin.com/in/pablo-ruan-tzeliks" target="_blank">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn"/>
-  </a>
-  <a href="mailto:arq.pabloo@gmail.com" target="_blank">
-    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/>
-  </a>
-</p>
+Programa industrial de 3.200 horas dentro da WEG, agosto de 2024 a julho de 2026. O currículo oferece amplitude; a profundidade construo nos projetos, levando cada problema além do que o escopo do curso exige.
 
-  <h4 align="center">Sinta se a vontade a ver meus repositórios e projetos! Caso goste de algum, considere favorita-lo!</h4>
-</p>
+**InfoWEG** · Product Owner e Tech Lead
+
+Plataforma de comunicação interna com entrega segmentada por perfil — originei o conceito, defini a arquitetura inicial e coordenei o time de classe com Scrum.
+
+`Java · Spring Boot · MySQL`
+
+<br>
+
+**SynapseRH** · Tech Lead e Lead Backend Developer
+
+Sistema de recrutamento com matchmaking por habilidades — capstone da unidade de Técnicas de Programação, equipe de cinco pessoas, ~80 issues gerenciadas.
+
+- Arquitetura em quatro camadas com DDD explícito e Value Objects no domínio (Email, CPF, Endereço, Senha)
+- Algoritmo de matchmaking com pontuação ponderada contra requisitos da vaga
+- Strategy Pattern no CLI, MapStruct entre camadas de aplicação e apresentação
+- Apresentado a painel externo de RH
+
+`Java 21 · PostgreSQL · JDBC · MapStruct`
+
+<br>
+
+**Time Trial System** · Tech Lead e Arquiteto
+
+Plataforma de telemetria IoT em tempo real com hardware físico (ESP32 + RFID) — o time saiu do stack esperado pelo curso e reconstruiu o problema do zero com arquitetura orientada a eventos.
+
+- Ingestão assíncrona via MQTT, Cassandra em cluster de 3 nós com consistência QUORUM
+- Distribuição de resultados em tempo real via WebSocket sem polling
+- Módulo de análise em Python com K-Means e Streamlit
+- Demo ao vivo para Professores e Supervisores de diferentes áreas do CentroWEG
+
+`Java 21 · Spring Boot 3 · Apache Cassandra · Docker`
+
+<br>
+
+**Payment Gateway Core** · Co-desenvolvedor
+
+Duas implementações paralelas do mesmo gateway — uma deliberadamente caótica, uma deliberadamente rigorosa — para estudar por contraste o valor de arquitetura disciplinada.
+
+- Transaction manager ACID customizado via `ThreadLocal` + JDBC sem Spring
+- Execute Around Pattern para centralizar o ciclo de vida das conexões JDBC
+- Event Sourcing para derivar saldo do histórico imutável de transações
+- ~80% de cobertura entre testes unitários, de integração e end-to-end
+
+`Java 21 · PostgreSQL · Maven`
 
 ---
 
-<p align="center">
-  <img src="https://komarev.com/ghpvc/?username=PabloTzeliks&style=flat-square&color=0077B5" alt="Contador de Visitas"/>
-</p>
+## Atualmente
+
+- Praticando CQRS, Event Sourcing e sagas coreografadas
+- Estudando ABAC, caching com Redis e bancos colunares
+- Lendo *Fundamentals of Software Architecture: An Engineering Approach*
+
+---
+
+## Stack
+
+- **Runtime:** Java 21 · Spring Boot
+- **Dados:** PostgreSQL · Redis · Apache Kafka · Neo4j · MySQL · Apache Cassandra
+- **Infra:** Docker · AWS · GitHub Actions · Linux
+- **Observabilidade:** Micrometer · Prometheus · Grafana
+- **Testes:** JUnit 5 · Mockito · Testcontainers
+- **Build:** Maven
+
+Trabalho com TypeScript/Node.js e Python quando o projeto demanda. Tenho base sólida em frontend — meu foco de aprofundamento é backend.
+
+---
+
+## Certificações
+
+**AWS Cloud Practitioner Essentials** — Amazon Web Services, janeiro de 2026. Preparando para a certificação CLF-C02.
+
+**Cisco Academy Networking Basics** — Cisco Networking Academy, dezembro de 2025. Fundamentos de redes IP, IPv4 e protocolos de rede.
+
+---
+
+## O que busco
+
+Concluindo o CentroWEG, com disponibilidade plena a partir de **agosto de 2026**. Busco oportunidades de engenharia backend ou full-stack em problemas complexos — sistemas distribuídos, plataformas orientadas a eventos, sistemas financeiros e de pagamento. Valorizo equipes que documentam decisões, encaram trade-offs com seriedade e tratam código como meio de design, não apenas entrega.
+
+---
+
+[Portfólio](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
