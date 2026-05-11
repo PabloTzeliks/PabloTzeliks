@@ -2,7 +2,7 @@
 
 Desenvolvedor de software Back-End. Java, Spring, sistemas distribuídos. Jaraguá do Sul, Brasil.
 
-Construo sistemas deliberadamente complexos para entendê-los por dentro — consistência eventual, saga distribuída, autorização descentralizada, design de domínio. Não busco a solução mais simples. Busco a que force o problema de engenharia real.
+Construo sistemas deliberadamente complexos para entendê-los por dentro — consistência eventual, saga distribuída, autorização descentralizada, design de domínio. Não busco a solução mais simples — busco a que force o problema de engenharia real.
 
 **Disponível a partir de agosto de 2026.**
 
@@ -70,9 +70,15 @@ Ao longo do programa, liderei ou co-liderei quatro projetos com decisões de eng
 
 **InfoWEG** · Plataforma de comunicação interna com entrega segmentada por perfil de usuário. Product Owner e Tech Lead do projeto de classe. Java, Spring Boot, MySQL.
 
+<br>
+
 **SynapseRH** · Sistema de recrutamento com motor de matchmaking por habilidades. Tech Lead e Lead Backend Developer em equipe de cinco pessoas — cerca de 80 issues gerenciadas. Arquitetura em quatro camadas com DDD explícito, Value Objects no domínio (Email, CPF, Endereço, Senha), Strategy Pattern na camada de apresentação, algoritmo de matchmaking com pontuação ponderada. Apresentado a painel externo de RH. Java 21, PostgreSQL, JDBC, MapStruct.
 
+<br>
+
 **Time Trial System** · Plataforma de telemetria IoT em tempo real com hardware físico (ESP32 + RFID). Tech Lead e Arquiteto. Saímos do stack esperado pelo curso — Node-RED com MySQL — e reconstruímos o problema com arquitetura orientada a eventos. Ingestão via MQTT, Cassandra em cluster de 3 nós com consistência QUORUM, resultados em tempo real via WebSocket, análise em Python com K-Means. Demo ao vivo para Professores e Supervisores de diferentes áreas do CentroWEG. Java 21, Spring Boot 3, Docker.
+
+<br>
 
 **Payment Gateway Core** · Estudo comparativo entre duas implementações paralelas do mesmo gateway — uma deliberadamente caótica, uma deliberadamente rigorosa. Co-desenvolvedor. Na implementação limpa: transaction manager ACID customizado via `ThreadLocal` + JDBC sem Spring, Execute Around Pattern para centralizar o ciclo de vida das conexões, Event Sourcing para derivar saldo do histórico imutável de transações, ~80% de cobertura entre testes unitários, de integração e end-to-end. Java 21.
 
@@ -80,14 +86,9 @@ Ao longo do programa, liderei ou co-liderei quatro projetos com decisões de eng
 
 ## Atualmente
 
-Concluindo o aprendizado na WEG. Nos últimos meses:
-
 - Praticando CQRS, Event Sourcing, Sagas Coreografadas, Caching e Rate Limiting
 - Lendo *Fundamentals of Software Architecture: An Engineering Approach*
 - Estudando Kafka, autorização baseada em atributos (ABAC), Sistemas Distribuídos, Aplicações com Redis e Bancos Colunares
-
-**Escrevendo**
-- Publicações técnicas ocasionais no LinkedIn sobre decisões arquiteturais dos projetos
 
 ---
 
@@ -96,7 +97,7 @@ Concluindo o aprendizado na WEG. Nos últimos meses:
 | | |
 |---|---|
 | **Runtime** | Java 21 · Spring Boot |
-| **Dados** | PostgreSQL · Redis · Apache Kafka · MySQL · Apache Cassandra |
+| **Dados** | PostgreSQL · Redis · Apache Kafka · Neo4j · MySQL · Apache Cassandra |
 | **Infra** | Docker · AWS · GitHub Actions · Linux |
 | **Observabilidade** | Micrometer · Prometheus · Grafana |
 | **Testes** | JUnit 5 · Mockito · Testcontainers |
@@ -111,8 +112,6 @@ Trabalho com TypeScript/Node.js e Python quando o projeto demanda. Tenho base s�
 **AWS Cloud Practitioner Essentials** — Amazon Web Services, janeiro de 2026. Preparando para a certificação CLF-C02.
 
 **Cisco Academy Networking Basics** — Cisco Networking Academy, dezembro de 2025. Fundamentos de redes IP, IPv4 e protocolos de rede.
-
-Estudo autodirigido contínuo em arquitetura de sistemas distribuídos e infraestrutura em nuvem — incluindo trilha Java/Spring Boot pela Rocketseat.
 
 ---
 
