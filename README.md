@@ -6,7 +6,7 @@ Construo sistemas deliberadamente complexos para entendê-los por dentro — con
 
 **Disponível a partir de agosto de 2026.**
 
-[Portfólio Pessoal](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [Email](mailto:devpablotzeliks@gmail.com)
+[pablotzeliks.github.io](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [linkedin.com/in/pablo-ruan-tzeliks](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
 
 ---
 
@@ -115,8 +115,8 @@ Duas implementações paralelas do mesmo gateway — uma deliberadamente caótic
 
 ## Atualmente
 
-- Praticando CQRS, Event Sourcing, Sagas Coreografadas e aplicações com Redis
-- Estudando ABAC, Kafka, AWS e bancos colunares
+- Praticando CQRS, Event Sourcing e sagas coreografadas
+- Estudando ABAC, caching com Redis e bancos colunares
 - Lendo *Fundamentals of Software Architecture: An Engineering Approach*
 
 ---
@@ -148,4 +148,4 @@ Concluindo o CentroWEG, com disponibilidade plena a partir de **agosto de 2026**
 
 ---
 
-[Portfólio Pessoal](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [Email](mailto:devpablotzeliks@gmail.com)
+[pablotzeliks.github.io](https://pablotzeliks.github.io/pablotzeliks-portfolio) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
