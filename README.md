@@ -110,6 +110,7 @@ Duas implementações paralelas do mesmo gateway — uma deliberadamente caótic
 - Praticando CQRS, Event Sourcing e sagas coreografadas
 - Estudando ABAC, caching com Redis e bancos colunares
 - Lendo *Fundamentals of Software Architecture: An Engineering Approach*
+- Tech Lead no Projeto Final acadêmico Portal Conecta do CentroWEG
 
 ---
 
