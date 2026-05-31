@@ -122,13 +122,15 @@ Duas implementações paralelas do mesmo gateway — uma deliberadamente caótic
 - **Testes:** JUnit 5 · Mockito · Testcontainers
 - **Build:** Maven
 
-Trabalho com TypeScript/Node.js e Python quando o projeto demanda. Tenho base sólida em frontend — meu foco de aprofundamento é backend.
+Trabalho com TypeScript/Node.js quando o projeto demanda. Tenho base muito sólida em frontend — meu foco de aprofundamento é backend.
 
 ---
 
 ## Certificações
 
 **AWS Cloud Practitioner Essentials** — Amazon Web Services, janeiro de 2026. Preparando para a certificação CLF-C02.
+
+**Confluent Apache Kafka Fundamentals Accreditation** — Confluent, maio de 2026. Fundamentos de Apache Kafka, Kafka Streams, Kraft, Apache Flink, Confluent Cloud e Platform
 
 **Cisco Academy Networking Basics** — Cisco Networking Academy, dezembro de 2025. Fundamentos de redes IP, IPv4 e protocolos de rede.
 
