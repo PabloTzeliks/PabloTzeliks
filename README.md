@@ -131,7 +131,7 @@ Trabalho com TypeScript/Node.js quando o projeto demanda. Tenho base muito sóli
 
 **AWS Cloud Practitioner Essentials** — Amazon Web Services, janeiro de 2026. Preparando para a certificação CLF-C02.
 
-**AWS Academy Graduate - Cloud Foundations** — AWS Academy, maio de 2026. Conhecimento teórico denso para Certifições Cloud da AWS, unindo laboratórios práticos e atividades complexas.
+**AWS Academy Graduate - Cloud Foundations** — AWS Academy, junho de 2026. Conhecimento teórico denso para Certifições Cloud da AWS, unindo laboratórios práticos e atividades complexas.
 
 **Confluent Apache Kafka Fundamentals Accreditation** — Confluent, maio de 2026. Fundamentos de Apache Kafka, Kafka Streams, Kraft, Apache Flink, Confluent Cloud e Platform
 
