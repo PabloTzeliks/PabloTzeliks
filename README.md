@@ -4,7 +4,7 @@ Backend developer — Java, Spring, distributed systems. Jaraguá do Sul, Brazil
 
 I build deliberately complex systems to understand them from the inside — eventual consistency, distributed sagas, decentralized authorization, domain design. I don't reach for the simplest solution; I reach for the one that forces the real engineering problem.
 
-**Available from August 2026** · [Portfolio](https://pablotzeliks.github.io) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
+[Portfolio](https://pablotzeliks.github.io) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
 
 ---
 
