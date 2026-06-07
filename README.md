@@ -1,148 +1,141 @@
 # Pablo Tzeliks
 
-Desenvolvedor de software Back-End. Java, Spring, sistemas distribuídos. Jaraguá do Sul, Brasil.
+Backend developer — Java, Spring, distributed systems. Jaraguá do Sul, Brazil.
 
-Construo sistemas deliberadamente complexos para entendê-los por dentro — consistência eventual, saga distribuída, autorização descentralizada, design de domínio. Não busco a solução mais simples — busco a que force o problema de engenharia real.
+I build deliberately complex systems to understand them from the inside — eventual consistency, distributed sagas, decentralized authorization, domain design. I don't reach for the simplest solution; I reach for the one that forces the real engineering problem.
 
-**Disponível a partir de agosto de 2026.**
-
-[Portfólio](https://pablotzeliks.github.io) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
+**Available from August 2026** · [Portfolio](https://pablotzeliks.github.io) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
 
 ---
 
-## Projetos Pessoais
+## Where I am now
 
-### [Ciphernance](https://github.com/PabloTzeliks/Ciphernance) · em desenvolvimento ativo
+Finishing WEG's CentroWEG / SENAI Industrial Apprenticeship in Systems Development (Aug 2024 – Jul 2026).
 
-Motor de core banking construído para entender sistemas distribuídos por dentro — um domínio onde saga, autorização descentralizada e event sourcing têm que coexistir por requisito, não por escolha.
+On **Portal Conecta**, I'm Frontend Tech Lead — a role I was placed in deliberately, outside my backend specialty. The project is in active development; I coordinate the frontend squad (Next.js, Tailwind v4, shadcn/ui, pnpm monorepo) and own the design-system and delivery decisions.
 
-Seis microsserviços. Quinze ADRs antes de qualquer código.
-
-**Decisões centrais:**
-
-- **Choreography sobre Orchestration.** Sem orquestrador central como ponto único de falha; rastreabilidade mais complexa mitigada pelo Audit Service imutável que captura a cadeia de eventos completa.
-- **ABAC com Policy Agents distribuídos.** Cache em duas camadas (Caffeine L1 + Redis L2), sincronizado via Kafka — consistência eventual aceita e documentada como trade-off deliberado.
-- **Event Sourcing escopado ao Transaction Service.** Saldo derivado do histórico de transações, não armazenado como coluna — aplicado onde o domínio exige, não onde seria conveniente.
-
-**Em andamento:** Identity Service — estrutura de políticas ABAC com DSL YAML, agentes em cada serviço sincronizados via Kafka.
-
-`Java 21 · Spring Boot 4 · Kafka · PostgreSQL · Redis · Neo4j · Prometheus · Grafana · Testcontainers · Maven`
-
-[Repositório](https://github.com/PabloTzeliks/Ciphernance) — código, ADRs e roadmap públicos.
-
----
-
-### [BlinkLink](https://github.com/PabloTzeliks/blink-link) · v3 disponível · v4 em desenvolvimento
-
-URL shortener reconstruído quatro vezes — cada iteração foi o veículo para um problema específico de engenharia. A simplicidade do domínio é proposital: o foco está no rigor da solução, não na complexidade do negócio.
-
-**v3 — entregue:**
-
-- IAM stateless: JWT em cookies HttpOnly, OAuth2 com Google e GitHub, RBAC por Roles e Tiers de usuário.
-- Garbage collection assíncrono com `SELECT ... FOR UPDATE SKIP LOCKED` — workers concorrentes sem contenção de lock.
-- Testcontainers contra PostgreSQL real — não H2, não mocks. CI/CD com GitHub Actions a cada push.
-
-**v4 — em construção:**
-
-- Cache Redis com estratégia cache-aside e alinhamento de TTL entre cache e banco.
-- Rate limiting por usuário e por endpoint.
-- Refatoração com Spring Modulith — modularização explícita sem migrar para microsserviços.
-- Banco colunar para o módulo de Analytics com ingestão via Kafka.
-- Primeiro deploy real na AWS.
-
-`Java 21 · Spring Boot 4 · Spring Security · Spring Modulith · PostgreSQL · Redis · Kafka · Flyway · Docker · Testcontainers · GitHub Actions`
-
----
-
-## Aprendizado — CentroWEG/SENAI
-
-Programa industrial de 3.200 horas dentro da WEG, agosto de 2024 a julho de 2026. O currículo oferece amplitude; a profundidade construo nos projetos, levando cada problema além do que o escopo do curso exige.
-
-**InfoWEG** · Product Owner e Tech Lead
-
-Plataforma de comunicação interna com entrega segmentada por perfil — originei o conceito, defini a arquitetura inicial e coordenei o time de classe com Scrum.
-
-`Java · Spring Boot · MySQL`
-
-<br>
-
-**SynapseRH** · Tech Lead e Lead Backend Developer
-
-Sistema de recrutamento com matchmaking por habilidades — capstone da unidade de Técnicas de Programação, equipe de cinco pessoas, ~80 issues gerenciadas.
-
-- Arquitetura em quatro camadas com DDD explícito e Value Objects no domínio (Email, CPF, Endereço, Senha)
-- Algoritmo de matchmaking com pontuação ponderada contra requisitos da vaga
-- Strategy Pattern no CLI, MapStruct entre camadas de aplicação e apresentação
-- Apresentado a painel externo de RH
-
-`Java 21 · PostgreSQL · JDBC · MapStruct`
-
-<br>
-
-**Time Trial System** · Tech Lead e Arquiteto
-
-Plataforma de telemetria IoT em tempo real com hardware físico (ESP32 + RFID) — o time saiu do stack esperado pelo curso e reconstruiu o problema do zero com arquitetura orientada a eventos.
-
-- Ingestão assíncrona via MQTT, Cassandra em cluster de 3 nós com consistência QUORUM
-- Distribuição de resultados em tempo real via WebSocket sem polling
-- Módulo de análise em Python com K-Means e Streamlit
-- Demo ao vivo para Professores e Supervisores de diferentes áreas do CentroWEG
-
-`Java 21 · Spring Boot 3 · Apache Cassandra · Docker`
-
-<br>
-
-**Payment Gateway Core** · Co-desenvolvedor
-
-Duas implementações paralelas do mesmo gateway — uma deliberadamente caótica, uma deliberadamente rigorosa — para estudar por contraste o valor de arquitetura disciplinada.
-
-- Transaction manager ACID customizado via `ThreadLocal` + JDBC sem Spring
-- Execute Around Pattern para centralizar o ciclo de vida das conexões JDBC
-- Event Sourcing para derivar saldo do histórico imutável de transações
-- ~80% de cobertura entre testes unitários, de integração e end-to-end
-
-`Java 21 · PostgreSQL · Maven`
-
----
-
-## Atualmente
-
-- Praticando CQRS, Event Sourcing e sagas coreografadas
-- Estudando ABAC, caching com Redis e bancos colunares
-- Lendo *Fundamentals of Software Architecture: An Engineering Approach*
-- Tech Lead no Projeto Final acadêmico Portal Conecta do CentroWEG
+Outside the program I'm in active development on **BlinkLink v4** and returning to **Time Trial** to remodel it around Kafka Streams. I'm reading *Fundamentals of Software Architecture* and learning the way I always have — by building the harder version of the problem.
 
 ---
 
 ## Stack
 
-- **Runtime:** Java 21 · Spring Boot
-- **Dados:** PostgreSQL · Redis · Apache Kafka · Neo4j · MySQL · Apache Cassandra
-- **Infra:** Docker · AWS · GitHub Actions · Linux
-- **Observabilidade:** Micrometer · Prometheus · Grafana
-- **Testes:** JUnit 5 · Mockito · Testcontainers
-- **Build:** Maven
+**Languages**  
+Java · SQL · TypeScript · JavaScript · Python
 
-Trabalho com TypeScript/Node.js quando o projeto demanda. Tenho base muito sólida em frontend — meu foco de aprofundamento é backend.
+**Backend**  
+Spring Boot · Spring Security · Spring Modulith · JPA/Hibernate · REST APIs · JWT · JDBC · OpenAPI/Swagger
 
----
+**Data & messaging**  
+PostgreSQL · Redis · Kafka · Cassandra · Neo4j · MySQL · MQTT
 
-## Certificações
+**Observability**  
+Micrometer · Prometheus · Grafana
 
-**AWS Cloud Practitioner Essentials** — Amazon Web Services, janeiro de 2026. Preparando para a certificação CLF-C02.
-
-**AWS Academy Graduate - Cloud Foundations** — AWS Academy, junho de 2026. Conhecimento teórico denso para Certifições Cloud da AWS, unindo laboratórios práticos e atividades complexas.
-
-**Confluent Apache Kafka Fundamentals Accreditation** — Confluent, maio de 2026. Fundamentos de Apache Kafka, Kafka Streams, Kraft, Apache Flink, Confluent Cloud e Platform
-
-**Cisco Academy Networking Basics** — Cisco Networking Academy, dezembro de 2025. Fundamentos de redes IP, IPv4 e protocolos de rede.
+**Infra, testing & build**  
+AWS · Docker · Flyway · GitHub Actions · Linux · JUnit 5 · Mockito · Testcontainers · JaCoCo · Maven
 
 ---
 
-## O que busco
-
-Concluindo o CentroWEG, com disponibilidade plena a partir de **agosto de 2026**. Busco oportunidades de engenharia backend ou full-stack em problemas complexos — sistemas distribuídos, plataformas orientadas a eventos, sistemas financeiros e de pagamento. Valorizo equipes que documentam decisões, encaram trade-offs com seriedade e tratam código como meio de design, não apenas entrega.
+## Focus
+ 
+- Distributed systems and event-driven architecture
+- Domain-Driven Design and explicit domain modeling
+- Eventual consistency, sagas, and partial-failure handling
+- Data ownership, derived state, and polyglot persistence
+- Backend reliability — testing, observability, evolvability
 
 ---
 
-[Portfólio](https://pablotzeliks.github.io) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
+## Certifications & Coursework
+
+Certifications, accreditations, and training badges:
+
+- **Confluent Apache Kafka Fundamentals Accreditation** — May 2026
+- **AWS Cloud Practitioner Essentials** — Jan 2026 *(preparing for CLF-C02)*
+- **AWS Academy Graduate — Cloud Foundations** — Jun 2026
+- **Networking Basics** — Cisco Networking Academy, Dec 2025
+
+Relevant coursework at WEG CentroWEG / SENAI: System Architecture, API Programming, Front-End programming, Database Implementation, Cloud Computing, and Information Security.
+
+---
+
+## Systems
+
+Each one is a deliberate choice of problem — the decisions matter more than the features.
+
+### [BlinkLink](https://github.com/PabloTzeliks/blink-link)
+*v3 delivered · v4 in active development*
+
+**A trivial domain, re-engineered four times to surface the hard problems.**
+
+A URL shortener rebuilt across four iterations, each a vehicle for a specific engineering problem. The simplicity of the domain is the point — the focus is the rigor of the solution.
+
+- Stateless IAM — JWT in HttpOnly cookies, OAuth2 (Google, GitHub), RBAC by roles and tiers.
+- Async garbage collection with `SELECT ... FOR UPDATE SKIP LOCKED` — concurrent workers, no lock contention.
+- Tested with Testcontainers against real PostgreSQL; CI/CD on every push.
+- *v4 in progress:* Redis cache-aside, rate limiting, Spring Modulith boundaries, Kafka-fed analytics, first AWS deployment.
+
+---
+
+### [Time Trial](https://github.com/PabloTzeliks/time-trial-api)
+*v1 delivered · remodeling in progress*
+
+**Physical race sensors to a live leaderboard, event-driven end to end.**
+
+A real-time IoT lap-timing platform on physical hardware (ESP32 + RFID). The team left the course's expected stack (Node-RED + MySQL) and rebuilt the problem around event-driven architecture. Demoed live to instructors and WEG IT leadership, with physical ESP32 hardware on stage.
+
+- Edge devices kept deliberately "dumb" — they emit only `{rfid, timestamp}`; all validation lives in the backend, so sensors scale horizontally.
+- Async MQTT ingestion into a running 3-node Cassandra cluster with QUORUM reads/writes; real-time output over WebSocket, history over REST.
+- Python analytics — K-Means clustering, Streamlit dashboard.
+- *Remodeling toward:* Kafka Streams for lap aggregation, first-class `Pista` and `Sessão` entities, durable lap-time storage.
+
+---
+
+### [Ciphernance](https://github.com/PabloTzeliks/Ciphernance)
+*architecture study · paused*
+
+**Distributed core banking as an architecture study — fifteen ADRs before the first line of code.**
+
+A design-first exploration of the problems a banking core forces on you: choreographed sagas, eventually consistent authorization, event sourcing where the domain demands it. The repository is the reasoning — fifteen ADRs documenting the trade-offs.
+
+**Designed, not yet implemented** — this captures how I reason about hard distributed problems before writing code, not a system I've validated by running it.
+
+- Choreography over orchestration — no central orchestrator as a single point of failure; an immutable Audit Service captures the full event chain.
+- ABAC with distributed policy agents — Caffeine (L1) + Redis (L2) synced over Kafka; eventual consistency as a documented trade-off.
+- Event sourcing scoped to the Transaction Service — balance derived from history, applied only where the domain requires it.
+
+---
+
+### [SynapseRH](https://github.com/equipe-javagle/mvp-recruitment-system)
+*delivered*
+
+**Skill-based recruitment matching — DDD, a five-person team, presented to an external HR panel.**
+
+A CLI recruitment system that matches candidates to openings through a weighted skill-scoring algorithm, built as a course capstone. ~80 issues managed across the team.
+
+- Four-layer architecture with explicit DDD and domain Value Objects (Email, CPF, Address, Password).
+- Weighted-score matchmaking against vacancy requirements.
+- Strategy Pattern in the CLI; MapStruct between layers.
+
+---
+
+### [Payment Gateway Core](https://github.com/PabloTzeliks/system-architecture-challenge)
+*delivered*
+
+**The same gateway built twice — disciplined vs. chaotic — to study architecture by contrast.**
+
+Two parallel implementations of one payment gateway, one deliberately rigorous and one deliberately chaotic, to study the value of disciplined architecture by contrast.
+
+- Custom ACID transaction manager via `ThreadLocal` + JDBC — `@Transactional` by hand, no Spring.
+- Execute-Around Pattern centralizing the JDBC connection lifecycle.
+- Event sourcing to derive balance from immutable transaction history.
+
+---
+
+## Looking ahead
+ 
+I'm starting a Software Engineering degree in mid-2026 and want to keep deepening the fundamentals beneath the systems I build — distributed architecture, data, the trade-offs that decide them.
+Near term, I'm after backend or full-stack roles on hard problems — distributed systems, event-driven platforms, payments — with teams that document decisions and take trade-offs seriously. Available full-time from August 2026.
+
+[Portfolio](https://pablotzeliks.github.io) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
