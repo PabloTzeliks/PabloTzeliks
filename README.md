@@ -65,16 +65,17 @@ Relevant coursework at WEG CentroWEG / SENAI: System Architecture, API Programmi
 Each one is a deliberate choice of problem — the decisions matter more than the features.
 
 ### [BlinkLink](https://github.com/PabloTzeliks/blink-link)
-*v3 delivered · v4 in active development*
+*v4.1 delivered · v4.2 in active development*
 
 **A trivial domain, re-engineered four times to surface the hard problems.**
 
 A URL shortener rebuilt across four iterations, each a vehicle for a specific engineering problem. The simplicity of the domain is the point — the focus is the rigor of the solution.
 
+- Redis hot path — cache-aside redirects, distributed ID sequence (`INCR`), and per-plan rate limiting with a sliding-window counter. Redis as the speed layer, PostgreSQL as the source of truth.
 - Stateless IAM — JWT in HttpOnly cookies, OAuth2 (Google, GitHub), RBAC by roles and tiers.
 - Async garbage collection with `SELECT ... FOR UPDATE SKIP LOCKED` — concurrent workers, no lock contention.
-- Tested with Testcontainers against real PostgreSQL; CI/CD on every push.
-- *v4 in progress:* Redis cache-aside, rate limiting, Spring Modulith boundaries, Kafka-fed analytics, first AWS deployment.
+- Tested with Testcontainers against real PostgreSQL and Redis; CI/CD on every push.
+- *v4.2 next:* Spring Modulith boundaries, Redis Streams analytics pipeline, ClickHouse storage, first AWS deployment.
 
 ---
 
