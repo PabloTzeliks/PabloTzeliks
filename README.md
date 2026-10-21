@@ -1,49 +1,46 @@
 # Pablo Tzeliks
 
-Backend developer — Java, Spring, distributed systems. Jaraguá do Sul, Brazil.
-
-I build deliberately complex systems to understand them from the inside — eventual consistency, distributed sagas, decentralized authorization, domain design. I don't reach for the simplest solution; I reach for the one that forces the real engineering problem.
+Full stack developer on WEG's industrial software engineering team. I work end to end, from critical data scattered across the company to the tools people use every day. Jaraguá do Sul, Brazil.
 
 [Portfolio](https://pablotzeliks.github.io) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
 
 ---
+ 
+## Now
+ 
+Full stack developer at WEG since August 2026, in the Integrated Manufacturing Systems section. Day to day developing end to end solutions for industrial digitalization.
 
-## Where I am now
+## Education
+ 
+**Bachelor's in Software Engineering**, Instituto Infnet  
+*2026 to 2030 · in progress*
+ 
+**Industrial Apprenticeship in Systems Development**, CentroWEG / SENAI  
+*2024 to 2026 · 3,200 hours*  
 
-Finishing WEG's CentroWEG / SENAI Industrial Apprenticeship in Systems Development (Aug 2024 – Jul 2026).
-
-On **Portal Conecta**, I'm Frontend Tech Lead — a role I was placed in deliberately, outside my backend specialty. The project is in active development; I coordinate the frontend squad (Next.js, Tailwind v4, shadcn/ui, pnpm monorepo) and own the design-system and delivery decisions.
-
-Outside the program I'm in active development on **BlinkLink v4** and returning to **Time Trial** to remodel it around Kafka Streams. I'm reading *Fundamentals of Software Architecture* and learning the way I always have — by building the harder version of the problem.
+Graduated as the outstanding student of my class, with a final average of 9.61.
 
 ---
 
 ## Stack
 
 **Languages**  
-Java · SQL · TypeScript · JavaScript · Python
+Java · TypeScript · SQL · Python · JavaScript · Go *(learning)*
 
 **Backend**  
 Spring Boot · Spring Security · Spring Modulith · JPA/Hibernate · REST APIs · JWT · JDBC · OpenAPI/Swagger
 
+**Frontend:**
+Next.js · React · Micro-frontends · Tailwind · Storybook · Vitest · Chromatic
+
 **Data & messaging**  
-PostgreSQL · Redis · Kafka · Cassandra · Neo4j · MySQL · MQTT
+PostgreSQL · MySQL · Redis · Cassandra · Kafka · MQTT · Airflow · Dremio
 
 **Observability**  
-Micrometer · Prometheus · Grafana
+Prometheus · Grafana · Micrometer · OpenTelemetry · Loki · Tempo
 
 **Infra, testing & build**  
-AWS · Docker · Flyway · GitHub Actions · Linux · JUnit 5 · Mockito · Testcontainers · JaCoCo · Maven
-
----
-
-## Focus
- 
-- Distributed systems and event-driven architecture
-- Domain-Driven Design and explicit domain modeling
-- Eventual consistency, sagas, and partial-failure handling
-- Data ownership, derived state, and polyglot persistence
-- Backend reliability — testing, observability, evolvability
+AWS · Kubernetes · Docker · Flyway · GitHub Actions · GitLab CI/CD · Linux · JUnit 5 · Mockito · Testcontainers · JaCoCo · Maven
 
 ---
 
@@ -62,10 +59,20 @@ Relevant coursework at WEG CentroWEG / SENAI: System Architecture, API Programmi
 
 ## Systems
 
-Each one is a deliberate choice of problem — the decisions matter more than the features.
+Each one is a deliberate choice of problem, the decisions matter more than the features.
+
+### [Portal Conecta](https://github.com/Portal-Conecta)
+*Delivered · apprenticeship final project*
+ 
+A hub platform for WEG and SENAI, built by 28 people across 5 squads. I was the Frontend Tech Lead, which meant a backend developer leading the frontend. I studied frontend after hours so I could make the calls while the project was moving.
+ 
+- Modular frontend in a pnpm monorepo (Next.js, Tailwind v4), split into core, ui and shared layers with enforced module boundaries.
+- Design system with 44 components, kept in Figma and Storybook. Tokens flow from Figma variables straight into Tailwind.
+- A BFF inside the Next.js server keeps business logic out of the UI.
+- Around 700 logic tests with Vitest, plus Chromatic visual regression and boundary checks.
 
 ### [BlinkLink](https://github.com/PabloTzeliks/blink-link)
-*v4.1 delivered · v4.2 in active development*
+*v4.1 delivered*
 
 **A trivial domain, re-engineered four times to surface the hard problems.**
 
@@ -80,7 +87,7 @@ A URL shortener rebuilt across four iterations, each a vehicle for a specific en
 ---
 
 ### [Time Trial](https://github.com/PabloTzeliks/time-trial-api)
-*v1 delivered · remodeling in progress*
+*v1 delivered*
 
 **Physical race sensors to a live leaderboard, event-driven end to end.**
 
@@ -134,9 +141,6 @@ Two parallel implementations of one payment gateway, one deliberately rigorous a
 
 ---
 
-## Looking ahead
- 
-I'm starting a Software Engineering degree in mid-2026 and want to keep deepening the fundamentals beneath the systems I build — distributed architecture, data, the trade-offs that decide them.
-Near term, I'm after backend or full-stack roles on hard problems — distributed systems, event-driven platforms, payments — with teams that document decisions and take trade-offs seriously. Available full-time from August 2026.
+## Know me better
 
 [Portfolio](https://pablotzeliks.github.io) · [LinkedIn](https://linkedin.com/in/pablo-ruan-tzeliks) · [devpablotzeliks@gmail.com](mailto:devpablotzeliks@gmail.com)
